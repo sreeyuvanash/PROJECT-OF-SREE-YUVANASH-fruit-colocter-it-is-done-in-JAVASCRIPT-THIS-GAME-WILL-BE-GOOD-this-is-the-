@@ -1,6 +1,7 @@
 class Game{
     constructor(){
-
+    this.right = createButton('-->');
+        this.left = createButton('<--');
     }
     getState() {
         var gameStateRef = database.ref('gameState');
@@ -134,7 +135,25 @@ class Game{
 
         // Add code for game end condition
 
+  this.right.position(900, 300);
+        this.right.style('width', '100px');
+        this.right.style('height', '30px');
+        this.right.style('background', 'noFill');
 
+        this.left.position(50, 300);
+        this.left.style('width', '100px');
+        this.left.style('height', '30px');
+        this.left.style('background', 'noFill');
+
+        this.right.mousePressed(() => {
+            player.distance -= 20
+            player.update();
+        })
+
+        this.left.mousePressed(() => {
+            player.distance += 20
+            player.update();
+        })
     }
 
     end(){
