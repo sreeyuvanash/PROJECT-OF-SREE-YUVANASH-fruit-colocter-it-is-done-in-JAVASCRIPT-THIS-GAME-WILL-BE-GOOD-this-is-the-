@@ -135,7 +135,7 @@ class Game{
 
         // Add code for game end condition
 
-  this.right.position(900, 300);
+  this.right.position(900, 300,40,70);
         this.right.style('width', '100px');
         this.right.style('height', '30px');
         this.right.style('background', 'noFill');
